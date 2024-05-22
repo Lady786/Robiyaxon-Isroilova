@@ -1,22 +1,14 @@
-import { useState, useEffect } from "react";
+
 import axios from "axios";
-import { backendUrl } from "../constantas/backendUrl";
+
+import { UseGetData } from "./UseGetData";
 
 
 const Client = () => {
-  const [products, setProducts] = useState([]);
  
-  useEffect(() => {
-    async function getProducts() {
-      try {
-        const response = await axios.get(`${backendUrl}/products`);
-        setProducts(response.data);
-      } catch (error) {
-        console.log("Xatolik yuz berdi", error);
-      }
-    }
-    getProducts();
-  }, []);
+ 
+ const products = UseGetData("products");
+
 
   const handleDelete = async (id) => {
    try {
@@ -38,7 +30,7 @@ const Client = () => {
   return (
     <div className="relative home w-[1540px] m-auto">
       <div className="our__products w-[1540px] h-[auto]  m-auto flex justify-around flex-wrap mt-[10px] ">
-        {
+        {products &&
         products.map((product) => (
           <div key={product._id} className="product w-[700px]  h-[500px] flex justify-between bg-[#F9F1E7]">
             <img src={product.image} className="w-[350px] h-[300px]  mt-[20px] ml-[20px]" alt="" />

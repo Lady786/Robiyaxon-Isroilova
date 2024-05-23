@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { backendUrl } from "../constantas/backendUrl";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UseAuth from "./UseAuth";
 
 const Admin = () => {
   const [title, setTitle] = useState("");
@@ -15,6 +16,8 @@ const Admin = () => {
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
   const navigate = useNavigate();
+
+  UseAuth()
 
   const handleSubmit = async () => {
     if ( !title || !subtitle || !image || !description || !rate || !price || !size || !color ) {

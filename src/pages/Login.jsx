@@ -2,8 +2,10 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { backendUrl } from "../constantas/backendUrl";
+import { UseMobile } from "./UseMobile";
 
 const Login = () => {
+  const isMobile = UseMobile()
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +29,7 @@ const Login = () => {
   return (
     <div className="w-screen h-screen bg-orange-200 flex items-center justify-center">
       <div className="w-[400px] h-[300px] border bg-white rounded-xl flex flex-col items-center justify-around">
+        <h1>Login page {isMobile ? "From Mobile device" : "From Dekstop"}</h1>
         <p className="font-bold text-[28px]">Login</p>
         <div>
           <label htmlFor="email">Email</label>

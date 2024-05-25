@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UseAuth from "./UseAuth";
 
+
 const Admin = () => {
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
@@ -18,6 +19,7 @@ const Admin = () => {
   const navigate = useNavigate();
 
   UseAuth()
+ 
 
   const handleSubmit = async () => {
     if ( !title || !subtitle || !image || !description || !rate || !price || !size || !color ) {

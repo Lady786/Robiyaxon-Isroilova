@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { UseGetData } from "./UseGetData";
 import UseAuth from "./UseAuth";
+
 // import { useNavigate } from "react-router-dom";
 
 
@@ -55,4 +56,4 @@ const Client = () => {
   );
 };
 
-export default Client;
+export default Client ;
